@@ -9,33 +9,67 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("https://picsum.photos/1920/1089?random=1");
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
 }
+
+/* Título */
 .h1 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 20px;
-  background-color: white; /* ou outra cor pra destacar */
-  text-align: center;
-
+    position: fixed;
+    right: 850px;
+    top: 20px;
+    font-family: "Sofia Sans", sans-serif;
+    font-size: 2rem;
+    color: #666666;
 }
 
+/* TV */
 .tv {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 600px;
-    height: 300px;
+    width: 1200px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 10px 10px;
     background-color: rgb(185, 185, 185);
+    margin-top: 80px;
 }
 
 .display {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 550px;
-    height: 260px;
+    width: 1150px;
+    height: 550px;
     background-color: black;
+}
+
+/* Logo com fundo branco */
+.logo {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+}
+
+.fundo-logo {
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeitos interativos na imagem */
+#logo-img {
+    width: 100px;
+    height: auto;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+}
+
+#logo-img:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
 }

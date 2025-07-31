@@ -6,16 +6,36 @@
     <link rel="stylesheet" href="style.css">
     <title>Dia Da Cozinha</title>
 </head>
-<body> 
-    <div class="text">
-        <h1 class="h1">Dia Da Cozinha</h1>
+<body>
+    <div class="logo">
+        <div class="fundo-logo">
+            <img src="sesi-logo.png" alt="Logo SESI" id="logo-img">
+        </div>
     </div>
+
+    <div class="text">
+        <div class="box-text">
+            <h1 class="h1">Prato de hoje</h1>
+        </div>
+    </div>
+
     <div class="tv">
         <div class="tela">
             <div class="display">
+                <!-- Conteúdo da "TV" aqui -->
             </div>
         </div>
-        </div>
     </div>
+
+    <script>
+        // Animação ao clicar na logo (opcional)
+        const logo = document.getElementById('logo-img');
+        logo.addEventListener('click', () => {
+            logo.style.transform = 'scale(1.5) rotate(0deg)';
+            setTimeout(() => {
+                logo.style.transform = 'scale(1.2) rotate(10deg)';
+            }, 200);
+        });
+    </script>
 </body>
 </html>
