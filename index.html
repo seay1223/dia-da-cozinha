@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Dia Da Cozinha</title>
 </head>
 <body>
@@ -21,21 +21,10 @@
 
     <div class="tv">
         <div class="tela">
-            <div class="display">
-                <!-- Conteúdo da "TV" aqui -->
-            </div>
+            <div id="carrossel"></div>
         </div>
     </div>
 
-    <script>
-        // Animação ao clicar na logo (opcional)
-        const logo = document.getElementById('logo-img');
-        logo.addEventListener('click', () => {
-            logo.style.transform = 'scale(1.5) rotate(0deg)';
-            setTimeout(() => {
-                logo.style.transform = 'scale(1.2) rotate(10deg)';
-            }, 200);
-        });
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
