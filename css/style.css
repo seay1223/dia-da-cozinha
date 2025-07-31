@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: white; /* ou outra cor pra destacar */
+  text-align: center;
+
+}
+
+.tv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    background-color: rgb(185, 185, 185);
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 260px;
+    background-color: black;
+}
+
+#carrossel {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+}
+
+.card {
+  min-width: 250px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.imagem-prato {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
