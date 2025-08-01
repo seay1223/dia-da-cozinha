@@ -6,52 +6,82 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
+    padding: 20px;
     background-image: url("https://picsum.photos/1920/1089?random=1");
     background-size: cover;
     background-position: center;
-    flex-direction: column;
-}
-
-/* Título */
-.h1 {
-    position: fixed;
-    right: 850px;
-    top: 20px;
     font-family: "Sofia Sans", sans-serif;
-    font-size: 2rem;
-    color: #666666;
+    overflow-x: hidden;
 }
 
-/* TV */
+.h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .tv {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1200px;
-    height: 600px;
+    width: 90%;
+    max-width: 1200px;
+    aspect-ratio: 2 / 1;
     border-radius: 20px;
-    box-shadow: 10px 10px;
-    background-color: rgb(185, 185, 185);
-    margin-top: 80px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 40px;
+}
+
+.tela {
+    width: 95%;
+    height: 90%;
+    background-color: black;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #carrossel {
     display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 1150px;
-    height: 550px;
-    background-color: black;
+    width: 100%;
+    height: 100%;
 }
 
-/* Logo com fundo branco */
+.card {
+    flex: 1 1 clamp(200px, 25%, 300px);
+    max-width: 400px;
+    min-width: 200px;
+    height: 270px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.imagem-prato {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
 .logo {
     position: fixed;
-    bottom: 40px;
-    left: 40px;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
 }
 
 .fundo-logo {
@@ -61,37 +91,38 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeitos interativos na imagem */
 #logo-img {
-    width: 100px;
+    width: 80px;
     height: auto;
     transition: transform 0.4s ease, filter 0.4s ease;
     cursor: pointer;
 }
 
-#logo-img:hover {
-    transform: scale(1.2) rotate(10deg);
-    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+
+@media (max-width: 768px) {
+    .h1 {
+        font-size: 2rem;
+    }
+
+    #logo-img {
+        width: 60px;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
 }
 
-/* Carrossel de pratos */
-#carrossel {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-}
+@media (max-width: 480px) {
+    .h1 {
+        font-size: 1.5rem;
+    }
 
-.card {
-  min-width: 250px;
-  border: 1px solid #ccc;
-  padding: 12px;
-  border-radius: 8px;
-  background: #f9f9f9;
-  text-align: center;
-}
+    .tv {
+        aspect-ratio: 1.5 / 1;
+    }
 
-.imagem-prato {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
+    .card {
+        flex: 1 1 100%;
+    }
 }

@@ -1,57 +1,65 @@
 // carrossel.js
-
 const pratosDaSemana = [
   {
     dia: "Segunda",
-    nome: "Arroz com feijão",
-    imagem: "img/segunda.jpg",
-    detalhes: "Acompanhado de salada e frango grelhado."
+    nome: "Feijoada Completa",
+    imagem: "img/quinta.jpg",
+    detalhes: "Feijoada com acompanhamentos tradicionais"
   },
   {
     dia: "Terça",
-    nome: "Macarronada",
+    nome: "Macarrão à Bolonhesa",
     imagem: "img/terca.jpg",
-    detalhes: "Macarrão ao sugo com queijo ralado."
+    detalhes: "Macarrão com molho de carne especial"
   },
   {
     dia: "Quarta",
-    nome: "Escondidinho",
-    imagem: "img/quarta.jpg",
-    detalhes: "Carne moída com purê de batata e arroz branco."
+    nome: "Frango Grelhado",
+    imagem: "img/sexta.jpg",
+    detalhes: "Com legumes frescos e arroz integral"
   },
   {
     dia: "Quinta",
-    nome: "Panqueca de legumes",
-    imagem: "img/quinta.jpg",
-    detalhes: "Recheada com legumes e servida com arroz."
+    nome: "Peixe Assado",
+    imagem: "img/segunda.jpg",
+    detalhes: "Com purê de batata e salada verde"
   },
   {
     dia: "Sexta",
-    nome: "Peixe assado",
-    imagem: "img/sexta.jpg",
-    detalhes: "Com purê de batata e legumes cozidos."
+    nome: "Lasanha Vegetariana",
+    imagem: "img/quarta.jpg",
+    detalhes: "Camadas de massa, queijo e legumes"
   }
 ];
 
 let indiceAtual = 0;
 
-function exibirPrato(prato) {
+function exibirPratos() {
   const container = document.getElementById("carrossel");
-  container.innerHTML = `
-    <div class="card fade">
-      <h2>${prato.dia}</h2>
+  container.innerHTML = '';
+  
+  // Mostra 3 pratos por vez (atual, próximo e anterior)
+  for (let i = -1; i <= 1; i++) {
+    const index = (indiceAtual + i + pratosDaSemana.length) % pratosDaSemana.length;
+    const prato = pratosDaSemana[index];
+    
+    const card = document.createElement('div');
+    card.className = `card ${i === 0 ? 'destaque' : ''}`;
+    card.innerHTML = `
+      <h3>${prato.dia}</h3>
       <img src="${prato.imagem}" alt="${prato.nome}" class="imagem-prato">
-      <h3>${prato.nome}</h3>
+      <h4>${prato.nome}</h4>
       <p>${prato.detalhes}</p>
-    </div>
-  `;
+    `;
+    container.appendChild(card);
+  }
 }
 
 function iniciarCarrossel() {
-  exibirPrato(pratosDaSemana[indiceAtual]);
+  exibirPratos();
   setInterval(() => {
     indiceAtual = (indiceAtual + 1) % pratosDaSemana.length;
-    exibirPrato(pratosDaSemana[indiceAtual]);
+    exibirPratos();
   }, 5000);
 }
 
