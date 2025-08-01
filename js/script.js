@@ -1,4 +1,3 @@
-// carrossel.js
 const pratosDaSemana = [
   {
     dia: "Segunda",
@@ -38,7 +37,6 @@ function exibirPratos() {
   const container = document.getElementById("carrossel");
   container.innerHTML = '';
   
-  // Mostra 3 pratos por vez (atual, próximo e anterior)
   for (let i = -1; i <= 1; i++) {
     const index = (indiceAtual + i + pratosDaSemana.length) % pratosDaSemana.length;
     const prato = pratosDaSemana[index];
